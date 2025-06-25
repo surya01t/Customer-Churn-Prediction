@@ -88,10 +88,11 @@ with st.container():
     with col2:
         st.subheader("Account Details")
         balance = st.number_input('Balance', 0, 300000, 10000)
-        tenure = st.slider('Tenure (Years)', 0, 10, 3)
-        num_of_products = st.slider('Number of Products', 1, 4, 2)
         has_cr_card = st.selectbox('Has Credit Card', [0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
         is_active_member = st.selectbox('Is Active Member', [0, 1], format_func=lambda x: "Yes" if x == 1 else "No")
+        tenure = st.slider('Tenure (Years)', 0, 10, 3)
+        num_of_products = st.slider('Number of Products', 1, 4, 2)
+        
 
 if st.button('Predict Churn Probability', type='primary', use_container_width=True):
     input_data = pd.DataFrame({
